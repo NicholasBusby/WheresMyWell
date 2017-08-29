@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Wheres_My_Well"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="Wheres_My_Well.Views.MainPage">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="85*"/>
+        </Grid.RowDefinitions>
+        <ContentView Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Orientation="Horizontal" x:Name="Filters"/>
+                <Button Grid.Column="1" Text="{Binding FilterButtonText}" Clicked="Filter_Clicked"/>
+            </Grid>
+        </ContentView>
+        <ContentView Grid.Row="1">
+            <maps:Map MapType="Hybrid" x:Name="WellMap"/>
+        </ContentView>
+    </Grid>
+</ContentPage>

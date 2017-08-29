@@ -8,7 +8,7 @@ namespace Wheres_My_Well
         {
             InitializeComponent();
 
-            MainPage = new Wheres_My_Well.MainPage();
+            MainPage = new Wheres_My_Well.Views.MainPage();
         }
 
         protected override void OnStart()
