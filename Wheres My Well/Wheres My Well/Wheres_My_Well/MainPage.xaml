@@ -2,8 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Wheres_My_Well"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="Wheres_My_Well.MainPage">
-    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <Label Text="Welcome To Wheres My Well"/>
-    </StackLayout>
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="85*"/>
+        </Grid.RowDefinitions>
+        <ContentView BackgroundColor="Blue" Grid.Row="0"/>
+        <ContentView BackgroundColor="Green" Grid.Row="1">
+            <maps:Map MapType="Hybrid"/>
+        </ContentView>
+    </Grid>
 </ContentPage>
