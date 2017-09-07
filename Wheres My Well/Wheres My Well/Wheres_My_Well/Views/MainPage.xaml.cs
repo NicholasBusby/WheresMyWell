@@ -14,7 +14,7 @@ namespace Wheres_My_Well.Views
 
         private void Filter_Clicked(object sender, System.EventArgs e)
         {
-            WellMap.Pins.Add(new Xamarin.Forms.Maps.Pin() { Position = new Xamarin.Forms.Maps.Position(52, 108), Label = "place", Type = Xamarin.Forms.Maps.PinType.Place });
+            WellMap.Pins.Add(new Xamarin.Forms.Maps.Pin() { Position = new Xamarin.Forms.Maps.Position(45, -108), Label = "place", Type = Xamarin.Forms.Maps.PinType.Place });
         }
     }
 }
