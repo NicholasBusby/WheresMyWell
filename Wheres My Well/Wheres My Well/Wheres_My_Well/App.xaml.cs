@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using System.Collections.Generic;
+using Wheres_My_Well.Services;
+using Wheres_My_Well.Views;
 using Xamarin.Forms;
 
 namespace Wheres_My_Well
 {
     public partial class App : Application
     {
+        public IOCService IOC { get; private set; }
+
         public App()
         {
             InitializeComponent();
+            IOC = new IOCService();
 
-            MainPage = new Wheres_My_Well.MainPage();
+            MainPage = IOC.Resolve<MainPage>();
         }
 
         protected override void OnStart()

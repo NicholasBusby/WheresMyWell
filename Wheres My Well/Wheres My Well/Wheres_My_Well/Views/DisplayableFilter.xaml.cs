@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace Wheres_My_Well
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace Wheres_My_Well.Views
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class DisplayableFilter : ContentView
     {
-        public MainPage()
+        public DisplayableFilter()
         {
             InitializeComponent();
         }
