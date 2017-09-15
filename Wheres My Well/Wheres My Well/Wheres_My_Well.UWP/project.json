@@ -2,6 +2,7 @@
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0",
     "Newtonsoft.Json": "10.0.2",
+    "Unity": "4.0.1",
     "WindowsAzure.Storage": "8.4.0",
     "Xamarin.Forms": "2.3.4.270",
     "Xamarin.Forms.Maps": "2.3.4.270"

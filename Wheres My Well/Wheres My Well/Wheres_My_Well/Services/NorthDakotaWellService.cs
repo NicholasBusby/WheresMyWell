@@ -11,9 +11,9 @@ using Wheres_My_Well.Properties;
 
 namespace Wheres_My_Well.Services
 {
-    public class NorthDakotaWellService
+    public class NorthDakotaWellService: IWellService
     {
-        public async Task<List<Well>> GetWells()
+        public async Task<IEnumerable<Well>> GetWells()
         {
             var key = Resources.AzureStorageKey;
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(key);

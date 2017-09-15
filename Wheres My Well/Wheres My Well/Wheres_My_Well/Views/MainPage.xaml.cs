@@ -3,16 +3,18 @@ using Wheres_My_Well.ViewModels;
 using System.ComponentModel;
 using Wheres_My_Well.Services;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Wheres_My_Well.Views
 {
     public partial class MainPage : ContentPage, INotifyPropertyChanged
     {
-        MainPageViewModel ViewModel;
-        public MainPage()
+        private MainPageViewModel ViewModel;
+
+        public MainPage(MainPageViewModel viewModel)
         {
             InitializeComponent();
-            ViewModel = new MainPageViewModel(new NorthDakotaWellService());
+            ViewModel = viewModel;
             BindingContext = ViewModel;
             GetWells();
         }

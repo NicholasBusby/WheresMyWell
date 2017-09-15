@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Threading.Tasks;
 using Wheres_My_Well.Models;
 using Wheres_My_Well.Services;
@@ -24,19 +25,21 @@ namespace Wheres_My_Well.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private NorthDakotaWellService wellService;
-        private List<Well> Wells;
+        private IEnumerable<IWellService> wellServices;
+        private IEnumerable<Well> Wells;
 
-        public MainPageViewModel(NorthDakotaWellService wellService)
+        public MainPageViewModel(IEnumerable<IWellService> wellServices)
         {
-            this.wellService = wellService;
+            this.wellServices = wellServices;
         }
 
-        public async Task<List<Well>> GetWells()
+        public async Task<IEnumerable<Well>> GetWells()
         {
-            if((Wells?.Count ?? 0) == 0)
+            if((Wells?.Count() ?? 0) == 0)
             {
-                Wells = await wellService.GetWells();
+                var wellTasks = wellServices.Select(x => x.GetWells());
+                var wellLists = await Task.WhenAll(wellTasks);
+                Wells = wellLists.SelectMany(x => x);
             }
             return Wells;
         }
