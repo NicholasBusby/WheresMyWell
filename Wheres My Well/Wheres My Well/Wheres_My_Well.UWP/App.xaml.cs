@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -58,7 +59,12 @@ namespace Wheres_My_Well.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
-                Xamarin.Forms.Forms.Init(e);
+                List<System.Reflection.Assembly> assembliesToInclude = new List<System.Reflection.Assembly>();
+                // Add all the renderer assemblies your app uses 
+                assembliesToInclude.Add(typeof(Syncfusion.SfAutoComplete.XForms.UWP.SfAutoCompleteRenderer).GetTypeInfo().Assembly);
+                assembliesToInclude = Rg.Plugins.Popup.Windows.Popup.GetExtraAssemblies(assembliesToInclude).ToList();
+                // Replace the Xamarin.Forms.Forms.Init(e);        
+                Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

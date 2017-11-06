@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wheres_My_Well.Views.Filter"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms">
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="400" Spacing="10">
+        <autocomplete:SfAutoComplete x:Name="WellNameAutoComplete" Watermark="Well Name" HorizontalOptions="Center" ShowSuggestionsOnFocus="True" AutoCompleteMode="SuggestAppend"/>
+        <autocomplete:SfAutoComplete x:Name="FormattedAPIAutoComplete" Watermark="API" HorizontalOptions="Center" ShowSuggestionsOnFocus="true" AutoCompleteMode="SuggestAppend"/>
+        <autocomplete:SfAutoComplete x:Name="OperatorAutoComplete" Watermark="Operator" HorizontalOptions="Center" ShowSuggestionsOnFocus="True" AutoCompleteMode="SuggestAppend"/>
+        <autocomplete:SfAutoComplete x:Name="FieldNameAutoComplete" Watermark="Field Name" HorizontalOptions="Center" ShowSuggestionsOnFocus="True" AutoCompleteMode="SuggestAppend"/>
+        <autocomplete:SfAutoComplete x:Name="CountyAutoComplete" Watermark="County" HorizontalOptions="Center" ShowSuggestionsOnFocus="True" AutoCompleteMode="SuggestAppend"/>
+        <Button Text="Filter" HorizontalOptions="End"/>
+    </StackLayout>
+</pages:PopupPage>

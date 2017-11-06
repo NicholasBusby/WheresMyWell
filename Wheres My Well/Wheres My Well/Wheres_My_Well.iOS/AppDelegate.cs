@@ -18,6 +18,7 @@ namespace Wheres_My_Well.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            new Syncfusion.SfAutoComplete.XForms.iOS.SfAutoCompleteRenderer();
             global::Xamarin.Forms.Forms.Init();
             Xamarin.FormsMaps.Init();
             LoadApplication(new App());
